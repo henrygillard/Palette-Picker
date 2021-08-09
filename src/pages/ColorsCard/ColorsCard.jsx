@@ -1,5 +1,5 @@
 export default function ColorCard({color}) {
     return(
-        <li>{color.name}</li>
+        <li style={{backgroundColor: `${color.code}`}}>{color.name}</li>
     )
 }
