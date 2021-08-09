@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import PaletteList from '../PaletteList/PaletteList';
+import PaletteList from '../NewPalettePage/NewPalettePage';
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
