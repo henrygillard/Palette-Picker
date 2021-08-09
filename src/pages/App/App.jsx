@@ -16,7 +16,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/palettes">
-              <PaletteIndex />
+              <PaletteIndex user={user}/>
             </Route>
             <Redirect to="/palettes" />
           </Switch>

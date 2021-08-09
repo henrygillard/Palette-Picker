@@ -2,7 +2,7 @@ import PaletteCard from "../PaletteCard/PaletteCard";
 import { useState, useEffect, useRef } from 'react';
 import * as palettesAPI from "../../utilities/palettes-api"
 
-export default function PaletteIndex() {
+export default function PaletteIndex({user}) {
   const [palettes, setPalettes] = useState([]);
   
   useEffect(function() {
@@ -19,7 +19,7 @@ export default function PaletteIndex() {
   return (
     <div>
     <h1>Palette List</h1>
-    {palettes.map((p, idx) => <PaletteCard palette={p} key={idx} />)}
+    {palettes.map((p, idx) => <PaletteCard palette={p} key={idx} user={user}/>)}
     </div>
   )
 }

@@ -25,12 +25,13 @@ const User = require('./models/user');
         {
             name: 'Primary Colors',
             colors: [colors[0]._id, colors[3]._id, colors[6]._id],
-            user: users[0]._id
+            user: users[0]
         },
     ]);
 
     console.log(colors)
     console.log(palettes)
+    console.log(users)
 
     process.exit();
 
