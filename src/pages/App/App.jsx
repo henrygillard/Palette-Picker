@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import PaletteList from '../NewPalettePage/NewPalettePage';
+import PaletteIndex from '../PaletteIndex/PaletteIndex';
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/palettes">
-              <PaletteList />
+              <PaletteIndex />
             </Route>
             <Redirect to="/palettes" />
           </Switch>

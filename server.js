@@ -25,6 +25,7 @@ app.use(require('./config/checkToken'));
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/colors', ensureLoggedIn, require('./routes/api/colors'));
+app.use('/api/palettes', ensureLoggedIn, require('./routes/api/palettes'));
 
 // The following "catch all" route (note the *) 
 // is necessary to return the index.html on ALL

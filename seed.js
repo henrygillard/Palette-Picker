@@ -2,8 +2,13 @@ require('dotenv').config();
 require('./config/database');
 
 const Color = require("./models/color");
+const Palette = require("./models/palette");
+const User = require('./models/user');
 
 (async function() {
+
+    const users = await User.find({})
+    
     await Color.deleteMany ({});
     const colors = await Color.create([
         {name: 'Red', code: '#FF0000'},
@@ -14,8 +19,18 @@ const Color = require("./models/color");
         {name: 'Pink', code: '#FF00FF'},
         {name: 'Green', code: '#00FF00'},
     ]);
+    
+    await Palette.deleteMany ({});
+    const palettes = await Palette.create([
+        {
+            name: 'Primary Colors',
+            colors: [colors[0]._id, colors[3]._id, colors[6]._id],
+            user: users[0]._id
+        },
+    ]);
 
     console.log(colors)
+    console.log(palettes)
 
     process.exit();
 
