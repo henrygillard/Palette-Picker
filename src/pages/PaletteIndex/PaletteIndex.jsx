@@ -11,14 +11,14 @@ export default function PaletteIndex({user}) {
       setPalettes(palettes);
     }
     getPalettes();
-  })
+  }, [])
 
 
   
 
   return (
     <div>
-    <h1>Palette List</h1>
+    <h1>Palettes List</h1>
     {palettes.map((p, idx) => <PaletteCard palette={p} key={idx} user={user}/>)}
     </div>
   )
