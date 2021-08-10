@@ -2,8 +2,15 @@ const Palette = require('../../models/palette');
 
 module.exports = {
   index,
-  show
+  show,
+  create
 };
+
+async function create(req, res) {
+    const palette = new Palette(req.body);
+    palette.save()
+    res.redirect("/palettes");
+}
 
 async function index(req, res) {
   const palettes = await Palette.find({}).sort('createdAt').populate("colors").exec();

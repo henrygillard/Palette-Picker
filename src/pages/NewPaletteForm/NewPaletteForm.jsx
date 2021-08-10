@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function NewPaletteForm({addPalette}) {
 
+
     const [formData, setFormData] = useState({
         name: '',
         colors: []
@@ -17,6 +18,8 @@ export default function NewPaletteForm({addPalette}) {
         })
 
     }
+
+
 
     function handleChange(evt) {
         const newFormData = { ...formData, [evt.target.name]: evt.target.value };
@@ -37,6 +40,39 @@ export default function NewPaletteForm({addPalette}) {
           onChange={handleChange}
         ></input>
       </label>
+      <label>
+        Color
+        <input
+        type="color"
+          name="colors"
+          value={formData.colors}
+          className="input"
+          required
+          onChange={handleChange}
+        ></input>
+        </label>
+        <label>
+        Color
+        <input
+        type="color"
+          name="colors"
+          value={formData.colors}
+          className="input"
+          required
+          onChange={handleChange}
+        ></input>
+        </label>
+        <label>
+        Color
+        <input
+        type="color"
+          name="colors"
+          value={formData.colors}
+          className="input"
+          required
+          onChange={handleChange}
+        ></input>
+        </label>
       <button type="submit" className="button">
         ADD PALETTE
       </button>

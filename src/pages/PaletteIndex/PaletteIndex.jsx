@@ -30,6 +30,9 @@ export default function PaletteIndex({user}) {
     setPalettes([...palettes, palette]);
   }
 
+  function addColor(color) {
+    setColors([...colors, color]);
+  }
 
   
 
@@ -43,7 +46,7 @@ export default function PaletteIndex({user}) {
     user={user} 
     />)}
     
-    <NewPaletteForm addPalette={addPalette}/>
+    <NewPaletteForm addPalette={addPalette} addColor={addColor}/>
     
     </div>
   )
