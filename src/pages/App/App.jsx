@@ -5,6 +5,7 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import PaletteIndex from '../PaletteIndex/PaletteIndex';
 import NavBar from '../../components/NavBar/NavBar';
+import ColorsIndex from '../ColorsIndex/ColorsIndex';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -17,6 +18,9 @@ export default function App() {
           <Switch>
             <Route exact path="/palettes">
               <PaletteIndex user={user}/>
+            </Route>
+            <Route exact path="/colors">
+              <ColorsIndex user={user}/>
             </Route>
             <Redirect to="/palettes" />
           </Switch>

@@ -6,7 +6,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const colors = await Color.find({}).populate('Palette').exec();
+  const colors = await Color.find({})
   res.json(colors);
 }
 
