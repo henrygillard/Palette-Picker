@@ -24,7 +24,7 @@ const User = require('./models/user');
     const palettes = await Palette.create([
         {
             name: 'Primary Colors',
-            colors: [colors[0]._id, colors[3]._id, colors[6]._id],
+            colors: [colors[0].code, colors[3].code, colors[6].code],
             user: users[0]
         },
     ]);

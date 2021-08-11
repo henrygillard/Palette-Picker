@@ -1,5 +1,7 @@
 import {useState, useEffect} from "react";
 import * as colorsAPI from "../../utilities/colors-api";
+import NewColorForm from "../NewColorForm/NewColorForm";
+
 
 export default function ColorsIndex() {
 
@@ -7,7 +9,7 @@ export default function ColorsIndex() {
 
     useEffect(function() {
         async function getColors() {
-          const colors = await colorsAPI.getAll();
+          const colors = await colorsAPI.create();
           setColors(colors);
         }
         getColors();
@@ -18,6 +20,7 @@ export default function ColorsIndex() {
         <>
         <h1>All Colors</h1>
     {colors.map((c) => <li>{c.name}</li>)}
+    <NewColorForm colors={colors} setColors={setColors}/>
     </>
     )
 } 

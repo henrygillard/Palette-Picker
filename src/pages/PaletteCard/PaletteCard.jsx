@@ -2,7 +2,7 @@ import ColorsCard from "../ColorsCard/ColorsCard"
 import "./PaletteCard.css"
 
 export default function PaletteCard({palette, user}) {
-const paletteColors = palette.colors.map((c) => <ColorsCard color={c}/>)
+const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} key={idx}/>)
     return (
         <div className="palette-container">
          <h1>{palette.name}</h1>

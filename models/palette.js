@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const paletteSchema = new Schema({
     name: {type: String, required: true},
-    colors: [{type: Schema.Types.ObjectId, ref: 'Color'}],
+    colors: [String],
     user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
 }, {
     timestamps: true

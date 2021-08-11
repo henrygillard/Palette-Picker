@@ -1,0 +1,12 @@
+.NavBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 10vmin;
+    color: white;
+}
+
+.Links {
+    color: white;
+}

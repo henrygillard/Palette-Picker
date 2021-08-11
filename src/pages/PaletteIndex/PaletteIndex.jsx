@@ -26,14 +26,15 @@ export default function PaletteIndex({user}) {
   }, []);
 
 
-  function addPalette(palette) {
+  async function addPalette(paletteData) {
+    const palette = await palettesAPI.create(paletteData);
     setPalettes([...palettes, palette]);
+    console.log(palette)
   }
 
-  function addColor(color) {
-    setColors([...colors, color]);
-  }
+  
 
+  
   
 
   return (
@@ -45,8 +46,7 @@ export default function PaletteIndex({user}) {
     key={idx} 
     user={user} 
     />)}
-    
-    <NewPaletteForm addPalette={addPalette} addColor={addColor}/>
+    <NewPaletteForm addPalette={addPalette} colors={colors}/>
     
     </div>
   )

@@ -6,5 +6,6 @@ const colorsCtrl = require('../../controllers/api/colors');
 router.get('/', colorsCtrl.index);
 // GET /api/colors/:id
 router.get('/:id', colorsCtrl.show);
+router.post('/colors', colorsCtrl.create);
 
 module.exports = router;

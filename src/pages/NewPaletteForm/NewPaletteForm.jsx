@@ -1,79 +1,87 @@
-import { useState } from "react";
-
+import {useState} from "react";
+import {useHistory} from "react-router-dom";
+import "./NewPaletteForm.css"
+import * as paletteAPI from "../../utilities/palettes-api"
 
 export default function NewPaletteForm({addPalette}) {
 
-
-    const [formData, setFormData] = useState({
+    const [paletteData, setPaletteData] = useState({
         name: '',
-        colors: []
-    });
+        color1: '',
+        color2: '',
+        color3: '',
+        color4: '',
+        color5: '',
+    })
 
-    function addNewPalette(evt) {
+    const history = useHistory();
+
+    async function handleSubmit(evt) {
         evt.preventDefault();
-        addPalette(formData)
-        setFormData({
-            name: '',
-            colors: []
-        })
-
+        await paletteAPI.create(paletteData);
+        history.push('/palettes')
     }
 
 
-
     function handleChange(evt) {
-        const newFormData = { ...formData, [evt.target.name]: evt.target.value };
-        setFormData(newFormData);
+        const newFormData = { ...paletteData, [evt.target.name]: evt.target.value };
+        setPaletteData(newFormData);
       }
 
     return (
         <div>
         <h1>Enter New Palette</h1>
-        <form onSubmit={addNewPalette} >
-      <label>
+        <form onSubmit={handleSubmit} >
         Palette
         <input
           name="name"
-          value={formData.name}
-          className="input"
+          value={paletteData.name}
           required
           onChange={handleChange}
         ></input>
-      </label>
-      <label>
-        Color
+        Color 1:
         <input
         type="color"
-          name="colors"
-          value={formData.colors}
-          className="input"
+          name="color1"
+          value={paletteData.color1}
+          className="color-input"
           required
           onChange={handleChange}
-        ></input>
-        </label>
-        <label>
-        Color
+        />
+        Color 2:
         <input
         type="color"
-          name="colors"
-          value={formData.colors}
-          className="input"
+          name="color2"
+          value={paletteData.color2}
+          className="color-input"
           required
           onChange={handleChange}
-        ></input>
-        </label>
-        <label>
-        Color
+        />
+        Color 3:
         <input
         type="color"
-          name="colors"
-          value={formData.colors}
-          className="input"
-          required
+          name="color3"
+          value={paletteData.color3}
+          className="color-input"
           onChange={handleChange}
-        ></input>
-        </label>
-      <button type="submit" className="button">
+        />
+        Color 4:
+        <input
+        type="color"
+          name="color4"
+          value={paletteData.color4}
+          className="color-input"
+          onChange={handleChange}
+        />
+        Color 5:
+        <input
+        type="color"
+          name="color5"
+          value={paletteData.color5}
+          className="color-input"
+          onChange={handleChange}
+          />
+      <button type="submit" >
         ADD PALETTE
       </button>
       </form>
