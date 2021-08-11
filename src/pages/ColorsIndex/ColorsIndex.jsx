@@ -1,26 +1,27 @@
 import {useState, useEffect} from "react";
-import * as colorsAPI from "../../utilities/colors-api";
+import * as palettesAPI from "../../utilities/palettes-api";
 import NewColorForm from "../NewColorForm/NewColorForm";
 
 
 export default function ColorsIndex() {
 
-    const [colors, setColors] = useState([]);
+    const [palettes, setPalettes] = useState([]);
 
     useEffect(function() {
-        async function getColors() {
-          const colors = await colorsAPI.getAll();
-          setColors(colors);
+        async function getPalettes() {
+          const palettes = await palettesAPI.getAll();
+          setPalettes(palettes);
         }
-        getColors();
+        getPalettes();
       }, []);
+
+      const colorsArr = palettes.map((c) => <li>{c.colors}</li>)
 
 
     return(
         <>
         <h1>All Colors</h1>
-    {colors.map((c) => <li>{c.name}</li>)}
-    <NewColorForm colors={colors} setColors={setColors}/>
+    <div>{colorsArr}</div>
     </>
     )
 } 
