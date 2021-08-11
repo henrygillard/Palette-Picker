@@ -9,7 +9,7 @@ export default function ColorsIndex() {
 
     useEffect(function() {
         async function getColors() {
-          const colors = await colorsAPI.create();
+          const colors = await colorsAPI.getAll();
           setColors(colors);
         }
         getColors();

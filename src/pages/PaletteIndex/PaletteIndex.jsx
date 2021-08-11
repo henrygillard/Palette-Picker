@@ -42,11 +42,11 @@ export default function PaletteIndex({user}) {
     <h1>Palettes List</h1>
     {palettes.map((p, idx) => 
     <PaletteCard 
+    className="palette-container"
     palette={p} 
     key={idx} 
     user={user} 
     />)}
-    <NewPaletteForm addPalette={addPalette} colors={colors}/>
     
     </div>
   )

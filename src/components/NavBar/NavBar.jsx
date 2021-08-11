@@ -16,6 +16,7 @@ export default function NavBar({ user, setUser }) {
             
             <Link className="Links" to="/palettes">Palettes</Link> 
             <Link className="Links" to="/colors">Colors</Link>
+            <Link className="Links" to="/palettes/new">New Palette</Link>
             <div>Welcome, {user.name}</div>
             <Link className="Links" to="" onClick={handleLogOut}>Log Out</Link>
             
