@@ -24,6 +24,11 @@ async function handleShowColor(evt) {
     await setSelected(true)
 }
 
+async function handleHideColor(evt) {
+    evt.preventDefault();
+    await setSelected(false)
+}
+
 
     return (
         <>
@@ -36,13 +41,17 @@ async function handleShowColor(evt) {
                     <button >DELETE PALETTE</button>
                     </form>
                     <h3>Created by: {user.name}</h3>
+                    
                 </div>
                 : 
                 <h3>Created by: Not you</h3>
                 }
             </div>
             { selected ?
+            <div>
             <h1>{paletteColors}</h1>
+            <button onClick={handleHideColor}>HIDE</button>
+            </div>
            :
            <p>nothing to see here</p> 
         }
