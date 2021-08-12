@@ -16,7 +16,8 @@ async function deletePalette(req, res) {
 }
 
 async function index(req, res) {
-    const palettes = await Palette.find({}).sort('createdAt').exec();
+    const palettes = await Palette.find({}).sort('createdAt')
+    palettes.reverse()
     res.json(palettes);
 }
 async function create(req, res) {
