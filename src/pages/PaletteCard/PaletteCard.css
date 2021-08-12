@@ -1,5 +1,8 @@
 .palette-container {
-   border: solid thin;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-style: double;
+    border-radius: 10px;
    
 }
 

@@ -19,18 +19,20 @@ const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} key={
     return (
         <>
         <div className="palette-container">
-         <h1>{palette.name}</h1>
-         { user._id === palette.user ? 
-         <div>
-         <form onSubmit={handleDelete} className="delete-button">
-         <button >DELETE PALETTE</button>
-         </form>
-         <h3>Created by: {user.name}</h3>
-         </div>
-          : 
-          <h3>Created by: Not you</h3>
-        }
-        <h1>{paletteColors}</h1>
+            <div>
+                <h1>{palette.name}</h1>
+                { user._id === palette.user ? 
+                <div>
+                    <form onSubmit={handleDelete} className="delete-button">
+                    <button >DELETE PALETTE</button>
+                    </form>
+                    <h3>Created by: {user.name}</h3>
+                </div>
+                : 
+                <h3>Created by: Not you</h3>
+                }
+            </div>
+            <h1>{paletteColors}</h1>
         </div>
         </>
     )
