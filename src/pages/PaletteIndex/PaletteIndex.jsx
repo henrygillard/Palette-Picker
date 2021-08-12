@@ -9,6 +9,7 @@ import "./PaletteIndex.css"
 export default function PaletteIndex({user}) {
   const [palettes, setPalettes] = useState([]);
   const [colors, setColors] = useState([]);
+ 
 
 
   useEffect(function() {
@@ -40,6 +41,7 @@ export default function PaletteIndex({user}) {
     key={idx} 
     user={user} 
     setPalettes={setPalettes}
+    
     />)}
     
     </div>
