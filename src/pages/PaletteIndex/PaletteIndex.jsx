@@ -4,6 +4,7 @@ import * as palettesAPI from "../../utilities/palettes-api"
 import * as colorsAPI from "../../utilities/colors-api"
 import NewPaletteForm from "../NewPaletteForm/NewPaletteForm";
 import ColorsIndex from "../ColorsIndex/ColorsIndex";
+import "./PaletteIndex.css"
 
 export default function PaletteIndex({user}) {
   const [palettes, setPalettes] = useState([]);
@@ -29,8 +30,9 @@ export default function PaletteIndex({user}) {
  
 
   return (
-    <div>
+    <>
     <h1>Palettes List</h1>
+    <div className="index-container">
     {palettes.map((p, idx) => 
     <PaletteCard 
     className="palette-container"
@@ -41,5 +43,6 @@ export default function PaletteIndex({user}) {
     />)}
     
     </div>
+    </>
   )
 }
