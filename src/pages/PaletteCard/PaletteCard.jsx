@@ -29,7 +29,7 @@ async function handleShowColor(evt) {
         <>
         <div className="palette-container">
             <div>
-                <h1 onClick={handleShowColor}>{palette.name}</h1>
+                <h1 className={selected ? "selected": "palette-name"}onClick={handleShowColor}>{palette.name}</h1>
                 { user._id === palette.user ? 
                 <div>
                     <form onSubmit={handleDelete} className="delete-button">

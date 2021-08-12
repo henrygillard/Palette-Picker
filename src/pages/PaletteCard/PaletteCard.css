@@ -10,3 +10,11 @@
     display: flex;
     justify-content: center;
 }
+
+.selected {
+    border: solid;
+}
+
+.palette-name {
+    
+}
