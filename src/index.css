@@ -122,12 +122,12 @@ button, a.button {
   padding: 1vmin;
   color: var(--white);
   background-color: var(--orange);
-  font-size: 2vmin;
+  font-size: 3vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   border: .1vmin solid var(--tan-2);
-  border-radius: .5vmin;
+  border-radius: 1vmin;
   outline: none;
   cursor: pointer;
 }

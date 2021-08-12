@@ -2,3 +2,8 @@
     border: solid black;
     margin: 1vmin;
 }
+
+.delete-button {
+    display: flex;
+    justify-content: center;
+}

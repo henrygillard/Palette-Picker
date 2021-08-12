@@ -9,6 +9,7 @@ export default function PaletteIndex({user}) {
   const [palettes, setPalettes] = useState([]);
   const [colors, setColors] = useState([]);
 
+
   useEffect(function() {
     async function getColors() {
       const colors = await colorsAPI.getAll();
@@ -25,17 +26,7 @@ export default function PaletteIndex({user}) {
     getPalettes();
   }, []);
 
-
-  async function addPalette(paletteData) {
-    const palette = await palettesAPI.create(paletteData);
-    setPalettes([...palettes, palette]);
-    console.log(palette)
-  }
-
-  
-
-  
-  
+ 
 
   return (
     <div>
@@ -46,6 +37,7 @@ export default function PaletteIndex({user}) {
     palette={p} 
     key={idx} 
     user={user} 
+    setPalettes={setPalettes}
     />)}
     
     </div>

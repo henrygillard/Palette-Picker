@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom";
 import "./NewPaletteForm.css"
 import * as paletteAPI from "../../utilities/palettes-api"
 
-export default function NewPaletteForm({addPalette}) {
+export default function NewPaletteForm() {
 
     const [paletteData, setPaletteData] = useState({
         name: '',

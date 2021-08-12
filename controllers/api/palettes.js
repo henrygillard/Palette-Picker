@@ -1,11 +1,19 @@
+const palette = require('../../models/palette');
 const Palette = require('../../models/palette');
 
 module.exports = {
   index,
   show,
   create, 
+  delete: deletePalette
 };
 
+
+async function deletePalette(req, res) {
+  req.body.user = req.user._id
+  await Palette.findOneAndDelete({_id: req.body._id});
+  res.json(req.body)
+}
 
 async function index(req, res) {
     const palettes = await Palette.find({}).sort('createdAt').exec();

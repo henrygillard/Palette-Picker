@@ -7,5 +7,7 @@ router.get('/', palettesCtrl.index);
 // GET /api/palettes/:id
 router.get('/:id', palettesCtrl.show);
 router.post('/', palettesCtrl.create);
+router.delete('/', palettesCtrl.delete);
+
 
 module.exports = router;

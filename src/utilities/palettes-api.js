@@ -13,3 +13,7 @@ export function getById(id) {
 export function create(paletteData) {
     return sendRequest(BASE_URL, 'POST', paletteData)
 }
+
+export function deletePalette(palette) {
+  return sendRequest(`${BASE_URL}`, 'DELETE', palette)
+}
