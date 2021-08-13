@@ -8,17 +8,10 @@ import "./PaletteIndex.css"
 
 export default function PaletteIndex({user}) {
   const [palettes, setPalettes] = useState([]);
-  const [colors, setColors] = useState([]);
+  const [colors, setColors] = useState('');
  
 
 
-  useEffect(function() {
-    async function getColors() {
-      const colors = await colorsAPI.getAll();
-      setColors(colors);
-    }
-    getColors();
-  }, []);
   
   useEffect(function() {
     async function getPalettes() {
@@ -36,6 +29,9 @@ export default function PaletteIndex({user}) {
     <div className="index-container">
     {palettes.map((p, idx) => 
     <PaletteCard 
+    colors={colors}
+    setColors={setColors}
+    palettes={palettes}
     className="palette-container"
     palette={p} 
     key={idx} 

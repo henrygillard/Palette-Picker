@@ -4,16 +4,18 @@ import * as palettesAPI from "../../utilities/palettes-api"
 import { useEffect } from "react"
 import { useState } from "react"
 
-export default function PaletteCard({palette, user, setPalettes, }) {
+export default function PaletteCard({palette, user, setPalettes, colors, setColors}) {
 
 const [selected, setSelected] = useState(false);
 
-const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} key={idx}/>)
+const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} key={idx} colors={colors} setColors={setColors}/>)
 
 
 async function handleDelete(evt) {
     evt.preventDefault();
     await palettesAPI.deletePalette(palette);
+    let updatedPalettes = palette.filter(p => p._id !== palette);
+    setPalettes(updatedPalettes)
         
 }
 

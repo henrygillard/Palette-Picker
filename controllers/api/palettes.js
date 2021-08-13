@@ -12,7 +12,7 @@ module.exports = {
 async function deletePalette(req, res) {
   req.body.user = req.user._id
   await Palette.findOneAndDelete({_id: req.body._id});
-  res.json(req.body)
+  res.json(palette)
 }
 
 async function index(req, res) {

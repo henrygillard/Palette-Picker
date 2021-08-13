@@ -1,6 +1,8 @@
 import {useState, useEffect} from "react";
 import * as palettesAPI from "../../utilities/palettes-api";
 import NewColorForm from "../NewColorForm/NewColorForm";
+import "./ColorsIndex.css";
+import ColorsIndexList from "../ColorsIndexList/ColorsIndexList"
 
 
 export default function ColorsIndex() {
@@ -15,13 +17,15 @@ export default function ColorsIndex() {
         getPalettes();
       }, []);
 
-      const colorsArr = palettes.map((c) => <li>{c.colors}</li>)
+      const colorsArr = palettes.map((c) => <ColorsIndexList color={c}/>)
 
 
     return(
         <>
         <h1>All Colors</h1>
-    <div>{colorsArr}</div>
+    <ul>
+      {colorsArr}
+    </ul>
     </>
     )
 } 
