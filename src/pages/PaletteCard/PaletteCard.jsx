@@ -7,7 +7,7 @@ import { useState } from "react"
 export default function PaletteCard({palette, user, setPalettes, colors, setColors}) {
 
 const [selected, setSelected] = useState(false);
-
+const [itemColor, setItemColor] = useState('');
 const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} key={idx} colors={colors} setColors={setColors} setSelected={setSelected}/>)
 
 
@@ -32,11 +32,12 @@ async function handleHideColor(evt) {
 
     return (
         <>
-        <div className="palette-container">
-            <div>
+        <div className="palette-container" >
+            
+            <div onClick={() => setItemColor(colors)} style={{backgroundColor: itemColor}}>
                 <h1 className={selected ? "selected": "palette-name"}onClick={handleShowColor}>{palette.name}</h1>
                 { user._id === palette.user ? 
-                <div>
+                <div >
                     <form onSubmit={handleDelete} className="delete-button">
                         <button >DELETE PALETTE</button>
                     </form>

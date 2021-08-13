@@ -13,11 +13,14 @@
 
 .selected {
     border: solid;
+    border-radius: 10px;
 }
 
 .palette-name {
     
+    
 }
+
 
 @media screen and (max-width: 600px) {
     .palette-container {

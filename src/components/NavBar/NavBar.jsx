@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "./NavBar.css"
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser, colors, setColors, itemColor, setItemColor }) {
 
     function handleLogOut() {
         // Delegate to the userService
@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
     }
     
     return(
-        <nav className="NavBar">
+        <nav className="NavBar" onClick={() => setItemColor(colors)} style={{color: itemColor}}>
             
             <Link className="Links" to="/palettes">Palettes</Link> 
             <Link className="Links" to="/colors">Colors</Link>
