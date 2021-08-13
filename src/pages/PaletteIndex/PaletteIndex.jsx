@@ -9,6 +9,7 @@ import "./PaletteIndex.css"
 export default function PaletteIndex({user}) {
   const [palettes, setPalettes] = useState([]);
   const [colors, setColors] = useState('');
+  const [itemColor, setItemColor] = useState('');
  
 
 
@@ -25,7 +26,7 @@ export default function PaletteIndex({user}) {
 
   return (
     <>
-    <h1>Palettes List</h1>
+    <h1 onClick={() => setItemColor(colors)} style={{color: itemColor}}>Palettes List</h1>
     <div className="index-container">
     {palettes.map((p, idx) => 
     <PaletteCard 
