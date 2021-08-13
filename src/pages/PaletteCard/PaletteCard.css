@@ -18,3 +18,13 @@
 .palette-name {
     
 }
+
+@media screen and (max-width: 600px) {
+    .palette-container {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        border-style: double;
+        border-radius: 10px;
+       
+    }
+}

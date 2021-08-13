@@ -29,16 +29,20 @@ export default function NewPaletteForm() {
       }
 
     return (
-        <div>
+      <>
         <h1>Enter New Palette</h1>
+        <div className="new-palette-form">
         <form onSubmit={handleSubmit} >
-        Palette
-        <input
-          name="name"
-          value={paletteData.name}
-          required
-          onChange={handleChange}
-        ></input>
+        <div className="name-input">
+          Palette Name:
+          <input
+            name="name"
+            value={paletteData.name}
+            required
+            onChange={handleChange}
+          ></input>
+        </div>
+        <div className="color-submit">
         Color 1:
         <input
         type="color"
@@ -81,10 +85,12 @@ export default function NewPaletteForm() {
           className="color-input"
           onChange={handleChange}
           />
+          </div>
       <button type="submit" >
         ADD PALETTE
       </button>
       </form>
         </div>
+        </>
     )
 }

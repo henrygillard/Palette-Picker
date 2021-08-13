@@ -4,9 +4,7 @@ import * as palettesAPI from "../../utilities/palettes-api"
 import { useEffect } from "react"
 import { useState } from "react"
 
-export default function PaletteCard({palette, 
-    user, 
-    setPalettes, }) {
+export default function PaletteCard({palette, user, setPalettes, }) {
 
 const [selected, setSelected] = useState(false);
 
@@ -38,19 +36,18 @@ async function handleHideColor(evt) {
                 { user._id === palette.user ? 
                 <div>
                     <form onSubmit={handleDelete} className="delete-button">
-                    <button >DELETE PALETTE</button>
+                        <button >DELETE PALETTE</button>
                     </form>
-                    <h3>Created by: {user.name}</h3>
-                    
+                    <h3>Created by: {palette.user}</h3>
                 </div>
                 : 
-                <h3>Created by: Not you</h3>
+                <h3>Created by: {palette.user}</h3>
                 }
             </div>
             { selected ?
             <div>
-            <h1>{paletteColors}</h1>
-            <button onClick={handleHideColor}>HIDE</button>
+                <h1>{paletteColors}</h1>
+                <button onClick={handleHideColor}>HIDE</button>
             </div>
            :
            <p>nothing to see here</p> 
