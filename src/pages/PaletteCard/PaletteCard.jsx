@@ -8,7 +8,7 @@ export default function PaletteCard({palette, user, setPalettes, colors, setColo
 
 const [selected, setSelected] = useState(false);
 
-const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} key={idx} colors={colors} setColors={setColors}/>)
+const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} key={idx} colors={colors} setColors={setColors} setSelected={setSelected}/>)
 
 
 async function handleDelete(evt) {

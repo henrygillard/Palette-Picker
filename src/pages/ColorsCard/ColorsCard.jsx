@@ -1,9 +1,12 @@
 import "./ColorsCard.css"
 
-export default function ColorCard({color, colors, setColors}) {
+export default function ColorCard({color, colors, setColors, setSelected}) {
     return(
         <div className="color-container">
-        <li style={{backgroundColor: `${color}`}} onClick={() => setColors(`${color}`)}>{color}</li>
+        <li className={`color-display ${colors === color && 'selected'}`} 
+            style={{backgroundColor: `${color}`}} 
+            onClick={() => setColors(`${color}`)}>
+            {color}</li>
         </div>
     )
 }
