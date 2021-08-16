@@ -13,16 +13,20 @@ export default function NavBar({ user, setUser, colors, setColors, itemColor, se
         setUser(null);
     }
 
-    function handleChange() {
-        if (linkColor !== colors) {
-          setLinkColor(colors);
+    function handleHeaderChange() {
+        if (itemColor === colors) {
+          setColors('')
+        } else {
+            setItemColor(colors);
         }
+
+        
       }
     
     return(
-        <nav className="NavBar" onClick={() => setItemColor(colors)} style={{backgroundColor: itemColor}}>
+        <nav className="NavBar" onClick={handleHeaderChange} style={{backgroundColor: itemColor}}>
             
-            <div onClick={handleChange} style={{backgroundColor: linkColor}} className="NavText" ><Link  className="Links" to="/palettes">Palettes</Link></div> 
+            <div style={{backgroundColor: linkColor}} className="NavText" ><Link  className="Links" to="/palettes">Palettes</Link></div> 
             <div className="NavText"><Link className="Links" to="/palettes/new">New Palette</Link></div>
             <div className="NavText">Welcome, {user.name}</div>
             <div className="NavText"><Link className="Links" to="" onClick={handleLogOut}>Log Out</Link></div>
