@@ -1,2 +1,12 @@
 .index-container {
+    /* background-color: red; */
+}
+
+
+@media screen and (max-width: 600px) {
+    .title {
+        border: solid;
+        margin: 2vmin 20vmin;
+        background-color: red;
+    }
 }

@@ -13,6 +13,9 @@ export default function App() {
   const [itemColor, setItemColor] = useState('');
   const [palettes, setPalettes] = useState([]);
   const [colors, setColors] = useState('');
+  const [mainColor, setMainColor] = useState('')
+
+  
 
   return (
     <main className="App">
@@ -21,11 +24,12 @@ export default function App() {
           <NavBar user={user} setUser={setUser} itemColor={itemColor} setItemColor={setItemColor} colors={colors} setColors={setColors}/>
           <Switch>
             <Route exact path="/palettes">
+              <div onClick={() => setMainColor(colors)} style={{backgroundColor: mainColor}}>
               <PaletteIndex user={user} 
               palettes={palettes}
               setPalettes={setPalettes}
               colors={colors}
-              setColors={setColors}/>
+              setColors={setColors}/></div>
             </Route>
             <Route exact path="/palettes/new">
               <NewPaletteForm />

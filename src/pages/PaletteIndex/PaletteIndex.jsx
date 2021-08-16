@@ -25,7 +25,7 @@ export default function PaletteIndex({user, palettes, setPalettes, colors, setCo
 
   return (
     <>
-    <h1 onClick={() => setHeaderColor(colors)} style={{color: headerColor}}>Palettes List</h1>
+    <h1 className="title" onClick={() => setHeaderColor(colors)} style={{backgroundColor: headerColor}}>Palettes List</h1>
     <div className="index-container">
     {palettes.map((p, idx) => 
     <PaletteCard 

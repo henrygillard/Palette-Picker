@@ -3,10 +3,23 @@
     justify-content: space-around;
     align-items: center;
     background-color: black;
+    border: solid thin black;
     height: 10vmin;
     color: white;
 }
 
 .Links {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.NavText {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
 }
