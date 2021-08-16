@@ -11,6 +11,7 @@ import NewPaletteForm from '../NewPaletteForm/NewPaletteForm';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [itemColor, setItemColor] = useState('');
+  const [palettes, setPalettes] = useState([]);
   const [colors, setColors] = useState('');
 
   return (
@@ -20,7 +21,11 @@ export default function App() {
           <NavBar user={user} setUser={setUser} itemColor={itemColor} setItemColor={setItemColor} colors={colors} setColors={setColors}/>
           <Switch>
             <Route exact path="/palettes">
-              <PaletteIndex user={user}/>
+              <PaletteIndex user={user} 
+              palettes={palettes}
+              setPalettes={setPalettes}
+              colors={colors}
+              setColors={setColors}/>
             </Route>
             <Route exact path="/palettes/new">
               <NewPaletteForm />

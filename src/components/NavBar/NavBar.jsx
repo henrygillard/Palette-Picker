@@ -12,10 +12,9 @@ export default function NavBar({ user, setUser, colors, setColors, itemColor, se
     }
     
     return(
-        <nav className="NavBar" onClick={() => setItemColor(colors)} style={{color: itemColor}}>
+        <nav className="NavBar" onClick={() => setItemColor(colors)} style={{backgroundColor: itemColor}}>
             
             <Link className="Links" to="/palettes">Palettes</Link> 
-            <Link className="Links" to="/colors">Colors</Link>
             <Link className="Links" to="/palettes/new">New Palette</Link>
             <div>Welcome, {user.name}</div>
             <Link className="Links" to="" onClick={handleLogOut}>Log Out</Link>

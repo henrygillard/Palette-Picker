@@ -6,9 +6,8 @@ import NewPaletteForm from "../NewPaletteForm/NewPaletteForm";
 import ColorsIndex from "../ColorsIndex/ColorsIndex";
 import "./PaletteIndex.css"
 
-export default function PaletteIndex({user}) {
-  const [palettes, setPalettes] = useState([]);
-  const [colors, setColors] = useState('');
+export default function PaletteIndex({user, palettes, setPalettes, colors, setColors}) {
+  
   const [headerColor, setHeaderColor] = useState('');
  
 
