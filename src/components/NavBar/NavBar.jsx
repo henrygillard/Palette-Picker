@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "./NavBar.css"
 
-export default function NavBar({ user, setUser, colors, setColors, itemColor, setItemColor }) {
+export default function NavBar({ selected, setSelected, user, setUser, colors, setColors, itemColor, setItemColor }) {
     const [linkColor, setLinkColor] = useState('')
 
     function handleLogOut() {
@@ -18,6 +18,7 @@ export default function NavBar({ user, setUser, colors, setColors, itemColor, se
           setColors('')
         } else {
             setItemColor(colors);
+            setSelected(true);
         }
 
         

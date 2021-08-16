@@ -6,12 +6,19 @@ import NewPaletteForm from "../NewPaletteForm/NewPaletteForm";
 import ColorsIndex from "../ColorsIndex/ColorsIndex";
 import "./PaletteIndex.css"
 
-export default function PaletteIndex({user, palettes, setPalettes, colors, setColors}) {
+export default function PaletteIndex({user, 
+  palettes, 
+  setPalettes, 
+  colors, 
+  setColors,
+  mainColor,
+  setMainColor,
+  bgColor,
+  setBgColor,
+  selected,
+  setSelected,}) 
+{
   
-  const [headerColor, setHeaderColor] = useState('');
- 
-
-
   
   useEffect(function() {
     async function getPalettes() {
@@ -25,18 +32,24 @@ export default function PaletteIndex({user, palettes, setPalettes, colors, setCo
 
   return (
     <>
-    <h1 className="title" onClick={() => setHeaderColor(colors)} style={{backgroundColor: headerColor}}>Palettes List</h1>
+    <h1 className="title" >Palettes List</h1>
     <div className="index-container">
     {palettes.map((p, idx) => 
     <PaletteCard 
+    className="palette-container"
+    bgColor={bgColor}
+    setBgColor={setBgColor}
+    mainColor={mainColor}
+    setMainColor={setMainColor}
     colors={colors}
     setColors={setColors}
     palettes={palettes}
-    className="palette-container"
     palette={p} 
     key={idx} 
     user={user} 
     setPalettes={setPalettes}
+    selected={selected}
+    setSelected={setSelected}
     
     />)}
     

@@ -4,12 +4,25 @@ import * as palettesAPI from "../../utilities/palettes-api"
 import { useEffect } from "react"
 import { useState } from "react"
 
-export default function PaletteCard({palette, user, setPalettes, colors, setColors}) {
+export default function PaletteCard({selected, 
+    setSelected, 
+    mainColor, 
+    setMainColor, 
+    palette, 
+    user, 
+    bgColor,
+    setBgColor,
+    setPalettes, 
+    colors, 
+    setColors}) {
 
-const [selected, setSelected] = useState(false);
+const [colorSelector, setColorSelector] = useState(false);
 const [itemColor, setItemColor] = useState('');
-const [nameColor, setNameColor] = useState('');
-const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} key={idx} colors={colors} setColors={setColors} setSelected={setSelected}/>)
+const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} 
+key={idx} 
+colors={colors}
+setColors={setColors} 
+setSelected={setSelected}/>)
 
 
 async function handleDelete(evt) {
@@ -20,23 +33,47 @@ async function handleDelete(evt) {
         
 }
 
+function handleTextCheck() {
+    if (selected) {
+        setMainColor(colors);
+    } else {
+        setSelected(true);
+    }
+}
+
+function handleBgCheck() {
+    if (selected) {
+        setBgColor(colors);
+    } else {
+        setSelected(true);
+    }
+}
+
+function handleCardChange() {
+    if (colorSelector === true && itemColor !== colors) {
+      setColors('')
+    } else {
+        setItemColor(colors);
+    }
+  }
+
 async function handleShowColor(evt) {
     evt.preventDefault();
-    await setSelected(true)
+    await setColorSelector(true)
 }
 
 async function handleHideColor(evt) {
     evt.preventDefault();
-    await setSelected(false)
+    await setColorSelector(false)
 }
 
 
     return (
         <>
-        <div className="palette-container" onClick={() => setNameColor(colors)} style={{backgroundColor: nameColor}} >
+        <div className="palette-container" onClick={handleCardChange} style={{backgroundColor: itemColor}} >
             
-            <div onClick={() => setItemColor(colors)} style={{backgroundColor: itemColor}}>
-                <h1 className={selected ? "selected": "palette-name"}onClick={handleShowColor} >{palette.name}</h1>
+            <div>
+                <h1 className={colorSelector ? "selected": "palette-name"}onClick={handleShowColor} >{palette.name}</h1>
                 { user._id === palette.user ? 
                 <div >
                     <form onSubmit={handleDelete} className="delete-button">
@@ -48,9 +85,11 @@ async function handleHideColor(evt) {
                 <h3>Created by: {palette.user}</h3>
                 }
             </div>
-            { selected ?
+            { colorSelector ?
             <div>
                 <h1>{paletteColors}</h1>
+                <input type="checkbox" onClick={handleTextCheck}/> Set All Text
+                <input type="checkbox" onClick={handleBgCheck}/> Set Background
                 <button onClick={handleHideColor}>HIDE</button>
             </div>
            :
