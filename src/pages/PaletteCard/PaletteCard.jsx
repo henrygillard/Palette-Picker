@@ -76,8 +76,8 @@ async function handleHideColor(evt) {
                 <h1 className={colorSelector ? "selected": "palette-name"}onClick={handleShowColor} >{palette.name}</h1>
                 { user._id === palette.user ? 
                 <div >
-                    <form onSubmit={handleDelete} className="delete-button">
-                        <button >DELETE PALETTE</button>
+                    <form onSubmit={handleDelete} className="delete-form">
+                        <button className="delete-button">DELETE PALETTE</button>
                     </form>
                     <h3>Created by: {palette.user}</h3>
                 </div>
@@ -88,8 +88,16 @@ async function handleHideColor(evt) {
             { colorSelector ?
             <div>
                 <h1>{paletteColors}</h1>
-                <input type="checkbox" onClick={handleTextCheck}/> Set All Text
-                <input type="checkbox" onClick={handleBgCheck}/> Set Background
+                <div className="input-container">
+                    <label> Set All Text
+                        <input type="checkbox" onClick={handleTextCheck}/> 
+                        <span className="checkboxes"></span>
+                    </label>
+                    <label> Set Background
+                        <input  type="checkbox" onClick={handleBgCheck}/> 
+                        <span className="checkboxes"></span>
+                    </label>
+                </div>
                 <button onClick={handleHideColor}>HIDE</button>
             </div>
            :

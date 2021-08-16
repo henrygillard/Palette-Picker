@@ -23,3 +23,15 @@
     align-items: center;
     color: white;
 }
+
+@media screen and (max-width: 600px) {
+    .NavBar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: black;
+        border: solid thin black;
+        height: 20vmin;
+        color: white;
+    }
+}

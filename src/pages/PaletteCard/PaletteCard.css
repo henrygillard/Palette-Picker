@@ -18,10 +18,7 @@
     border-radius: 10px;
 }
 
-.palette-name {
-    
-    
-}
+
 
 
 @media screen and (max-width: 600px) {
@@ -32,4 +29,27 @@
         border-radius: 10px;
        
     }
+
+    .delete-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .delete-button {
+        width: 5rem;
+        font-size: medium;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    label {
+        font-size: 6vmin;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+      }
 }
