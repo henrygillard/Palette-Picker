@@ -101,7 +101,7 @@ async function handleHideColor(evt) {
                 <button onClick={handleHideColor}>HIDE</button>
             </div>
            :
-           <p>nothing to see here</p> 
+           <p>Select palette to view</p> 
         }
         </div>
         </>
