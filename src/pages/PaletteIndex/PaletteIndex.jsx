@@ -37,8 +37,8 @@ export default function PaletteIndex({user,
   return (
     <>
       <div className="header">
-        <Link to="/palettes"><h1>Palettes |</h1></Link>
-        <Link to="/colors"><h1>| Color List</h1></Link>
+        <Link to="/palettes" className="links" style={{color: mainColor}}><h1>Palettes</h1></Link>
+        <Link to="/colors" className="links" style={{color: mainColor}}><h1>Color List</h1></Link>
       </div>
       <div className="index-container">
         {palettes.map((p, idx) => 

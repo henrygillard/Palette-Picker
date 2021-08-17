@@ -45,12 +45,11 @@
         flex-direction: column;
         justify-content: center;
         align-content: center;
-        height: 150vmin;
         border-radius: 10px;
     }
 
     .color-input {
-        width: 40vmin;
+        width: 50vmin;
         height: 50vmin;
         margin: auto;
     }

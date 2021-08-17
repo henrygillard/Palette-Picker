@@ -1,7 +1,12 @@
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
+
+.links {
+    color: Grey;
+}
+
 
 
 @media screen and (max-width: 600px) {
