@@ -3,6 +3,7 @@ import "./PaletteCard.css"
 import * as palettesAPI from "../../utilities/palettes-api"
 import { useEffect } from "react"
 import { useState } from "react"
+import ColorSelector from "../../components/ColorSelector/ColorSelector"
 
 export default function PaletteCard({selected, 
     setSelected, 
@@ -113,25 +114,7 @@ function handleRefresh() {
             <div>
                 <p><span>Select a color, then set it's canvas!</span></p>
                 <h1>{paletteColors}</h1>
-                <div className="input-container">
-                    <label> 
-                        <button onClick={handleTextCheck} style={{backgroundColor: buttonColor, color: mainColor}}>Set All Text</button> 
-                        <span className="checkboxes"></span>
-                    </label>
-                    <label> 
-                        <button onClick={handleBgCheck} style={{backgroundColor: buttonColor, color: mainColor}}>Set Background</button> 
-                        <span className="checkboxes"></span>
-                    </label>
-                    <label> 
-                        <button onClick={handleButtonCheck} style={{backgroundColor: buttonColor, color: mainColor}}>Set Buttons</button> 
-                        <span className="checkboxes"></span>
-                    </label>
-                    <label> 
-                        <button onClick={handleCardCheck} style={{backgroundColor: buttonColor, color: mainColor}}>Set Cards</button> 
-                        <span className="checkboxes"></span>
-                    </label>
-                </div>
-                <button  style={{backgroundColor: buttonColor, color: mainColor}} onClick={handleHideColor}>HIDE</button>
+                <ColorSelector handleBgCheck={handleBgCheck} handleButtonCheck={handleButtonCheck} handleHideColor={handleHideColor} handleTextCheck={handleTextCheck} mainColor={mainColor} buttonColor={buttonColor} handleCardCheck={handleCardCheck}/>
             </div>
            :
            <p>Select palette to view</p> 
