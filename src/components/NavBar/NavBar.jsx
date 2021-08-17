@@ -27,7 +27,7 @@ export default function NavBar({ selected, setSelected, user, setUser, colors, s
     return(
         <nav className="NavBar" onClick={handleHeaderChange} style={{backgroundColor: itemColor}}>
             
-            <div style={{backgroundColor: linkColor}} className="NavText" ><Link  className="Links" to="/palettes">Palettes</Link></div> 
+            <div style={{backgroundColor: linkColor}} className="NavText" ><img src="https://i.imgur.com/oUtnhBS.png"></img><Link  className="Links" to="/palettes"></Link></div> 
             <div className="NavText"><Link className="Links" to="/palettes/new">New Palette</Link></div>
             <div className="NavText">Welcome, {user.name}</div>
             <div className="NavText"><Link className="Links" to="" onClick={handleLogOut}>Log Out</Link></div>

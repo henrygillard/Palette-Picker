@@ -25,6 +25,12 @@
     
 }
 
+img {
+    width: 3rem;
+    /* border: solid thin; */
+    padding: 2px;
+}
+
 @media screen and (max-width: 600px) {
     .NavBar {
         display: flex;
@@ -35,5 +41,9 @@
         font-size: 5vmin;
         color: white;
         border: black solid thin;
+    }
+
+    img {
+        width: 2rem;
     }
 }
