@@ -1,9 +1,6 @@
 import PaletteCard from "../PaletteCard/PaletteCard";
-import { useState, useEffect, useRef } from 'react';
+import { useEffect} from 'react';
 import * as palettesAPI from "../../utilities/palettes-api"
-import * as colorsAPI from "../../utilities/colors-api"
-import NewPaletteForm from "../NewPaletteForm/NewPaletteForm";
-import ColorsIndex from "../ColorsIndex/ColorsIndex";
 import "./PaletteIndex.css"
 import {Link} from "react-router-dom"
 
@@ -30,6 +27,8 @@ export default function PaletteIndex({user,
     }
     getPalettes();
   }, []);
+
+  
 
  
 

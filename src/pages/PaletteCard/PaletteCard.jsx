@@ -15,6 +15,7 @@ export default function PaletteCard({selected,
     setButtonColor,
     setPalettes, 
     colors, 
+    palettes,
     setColors}) {
 
 const [colorSelector, setColorSelector] = useState(false);
@@ -30,8 +31,8 @@ setSelected={setSelected}/>)
 async function handleDelete(evt) {
     evt.preventDefault();
     await palettesAPI.deletePalette(palette);
-    let updatedPalettes = palette.filter(p => p._id !== palette);
-    setPalettes(updatedPalettes)
+    setPalettes(palettes)
+    console.log(palettes)
         
 }
 
@@ -77,6 +78,10 @@ async function handleHideColor(evt) {
     await setColorSelector(false)
 }
 
+function handleRefresh() {
+    window.location.reload(false);
+}
+
 
     return (
         <>
@@ -86,7 +91,7 @@ async function handleHideColor(evt) {
                 { user._id === palette.user ? 
                 <div >
                     <form onSubmit={handleDelete} className="delete-form">
-                        <button style={{backgroundColor: buttonColor, color: mainColor}} className="delete-button">DELETE PALETTE</button>
+                        <button style={{backgroundColor: buttonColor, color: mainColor}} className="delete-button" onClick={handleRefresh}>DELETE PALETTE</button>
                     </form>
                     <h3>Created by: {palette.user}</h3>
                 </div>
