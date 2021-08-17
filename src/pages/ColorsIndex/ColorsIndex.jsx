@@ -22,9 +22,9 @@ export default function ColorsIndex({colorsList, setColorsList}) {
         <Link to="/palettes"><h1>Palettes |</h1></Link>
         <Link to="/colors"><h1>| Color List</h1></Link>
       </div>
-    <ul>
-     {colorsList.map((c, idx) => <li style={{backgroundColor: `${c.code}`}}>{c.name}</li>)}
-    </ul>
+    <div className="container">
+     {colorsList.map((c, idx) => <div style={{backgroundColor: `${c.code}`}} className="colors-list">{c.name}</div>)}
+     </div>
     </>
     )
 } 
