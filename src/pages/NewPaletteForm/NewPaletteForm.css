@@ -1,17 +1,42 @@
 .color-input {
-    width: 10vmin;
-    height: 8vmin;
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+}
+
+.new-palette-form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    border-style: double;
+    border-radius: 10px;
+    font-size: xx-large;
+    margin: 1rem;
+    padding: 1rem;
+  
+}
+
+
+.color-submit {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    margin: 1rem;
 }
 
 @media screen and (max-width: 600px) {
     .new-palette-form {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
         justify-content: center;
         align-items: center;
         border-style: double;
         border-radius: 10px;
         font-size: xx-large;
+        margin: 1rem;
+        padding: 1rem;
       
     }
 
@@ -27,11 +52,20 @@
     .color-input {
         width: 40vmin;
         height: 50vmin;
+        margin: auto;
     }
 
     .name-input {
+        text-decoration: underline;
         display: flex;
         flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    input {
+        height: 3rem;
+        margin: 0 1rem; 
+        font-size: large;
     }
 
   }

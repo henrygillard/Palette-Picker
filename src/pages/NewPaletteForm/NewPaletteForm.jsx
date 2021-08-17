@@ -32,65 +32,65 @@ export default function NewPaletteForm() {
       <>
         <h1>Enter New Palette</h1>
         <div className="new-palette-form">
-        <form onSubmit={handleSubmit} >
-        <div className="name-input">
-          Palette Name:
-          <input
-            name="name"
-            value={paletteData.name}
-            required
-            onChange={handleChange}
-          ></input>
+          <form onSubmit={handleSubmit} >
+            <div className="name-input">
+              Palette Name:
+              <input
+                name="name"
+                value={paletteData.name}
+                required
+                onChange={handleChange}
+              />
+            </div>
+            <div className="color-submit">
+              Color 1:
+              <input
+                type="color"
+                  name="color1"
+                  value={paletteData.color1}
+                  className="color-input"
+                  required
+                  onChange={handleChange}
+              />
+              Color 2:
+              <input
+                type="color"
+                  name="color2"
+                  value={paletteData.color2}
+                  className="color-input"
+                  required
+                  onChange={handleChange}
+              />
+              Color 3:
+              <input
+                type="color"
+                name="color3"
+                value={paletteData.color3}
+                className="color-input"
+                onChange={handleChange}
+              />
+              Color 4:
+              <input
+                type="color"
+                name="color4"
+                value={paletteData.color4}
+                className="color-input"
+                onChange={handleChange}
+              />
+              Color 5:
+              <input
+                type="color"
+                name="color5"
+                value={paletteData.color5}
+                className="color-input"
+                onChange={handleChange}
+                />
+            </div>
+            <button type="submit" >
+            ADD PALETTE
+            </button>
+          </form>
         </div>
-        <div className="color-submit">
-        Color 1:
-        <input
-        type="color"
-          name="color1"
-          value={paletteData.color1}
-          className="color-input"
-          required
-          onChange={handleChange}
-        />
-        Color 2:
-        <input
-        type="color"
-          name="color2"
-          value={paletteData.color2}
-          className="color-input"
-          required
-          onChange={handleChange}
-        />
-        Color 3:
-        <input
-        type="color"
-          name="color3"
-          value={paletteData.color3}
-          className="color-input"
-          onChange={handleChange}
-        />
-        Color 4:
-        <input
-        type="color"
-          name="color4"
-          value={paletteData.color4}
-          className="color-input"
-          onChange={handleChange}
-        />
-        Color 5:
-        <input
-        type="color"
-          name="color5"
-          value={paletteData.color5}
-          className="color-input"
-          onChange={handleChange}
-          />
-          </div>
-      <button type="submit" >
-        ADD PALETTE
-      </button>
-      </form>
-        </div>
-        </>
+      </>
     )
 }
