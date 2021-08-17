@@ -88,15 +88,15 @@ function handleRefresh() {
         <div className="palette-container" onClick={handleCardChange} style={{backgroundColor: itemColor}} >
             <div>
                 <h1 className={colorSelector ? "selected": "palette-name"}onClick={handleShowColor} >{palette.name}</h1>
-                { user._id === palette.user ? 
+                { user._id === palette.user._id ? 
                 <div >
                     <form onSubmit={handleDelete} className="delete-form">
                         <button style={{backgroundColor: buttonColor, color: mainColor}} className="delete-button" onClick={handleRefresh}>DELETE PALETTE</button>
                     </form>
-                    <h3>Created by: {palette.user}</h3>
+                    <h3>Created by: {palette.user.name}</h3>
                 </div>
                 : 
-                <h3>Created by: {palette.user}</h3>
+                <h3>Created by: {palette.user.name}</h3>
                 }
             </div>
             { colorSelector ?
