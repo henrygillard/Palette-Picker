@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { getUser } from '../../utilities/users-service';
@@ -7,6 +7,7 @@ import PaletteIndex from '../PaletteIndex/PaletteIndex';
 import NavBar from '../../components/NavBar/NavBar';
 import ColorsIndex from '../ColorsIndex/ColorsIndex';
 import NewPaletteForm from '../NewPaletteForm/NewPaletteForm';
+import * as colorsAPI from "../../utilities/colors-api"
 
 export default function App() {
   const [selected, setSelected] = useState(false)
@@ -14,8 +15,13 @@ export default function App() {
   const [itemColor, setItemColor] = useState('');
   const [palettes, setPalettes] = useState([]);
   const [colors, setColors] = useState('');
+  const [colorsList, setColorsList] = useState([]);
   const [mainColor, setMainColor] = useState('')
   const [bgColor, setBgColor] = useState('');
+  const [buttonColor, setButtonColor] = useState('');
+
+  
+
 
   function handleChange() {
     if (colors !== '') {
@@ -44,6 +50,8 @@ export default function App() {
               setPalettes={setPalettes}
               colors={colors}
               setColors={setColors}
+              buttonColor={buttonColor}
+              setButtonColor={setButtonColor}
               bgColor={bgColor}
               setBgColor={setBgColor}
               mainColor={mainColor}
@@ -53,7 +61,7 @@ export default function App() {
               <NewPaletteForm />
             </Route>
             <Route exact path="/colors">
-              <ColorsIndex user={user}/>
+              <ColorsIndex user={user} colorsList={colorsList} setColorsList={setColorsList}/>
             </Route>
             <Redirect to="/palettes" />
           </Switch>

@@ -6,18 +6,20 @@ import { useState } from "react"
 
 export default function PaletteCard({selected, 
     setSelected, 
-    mainColor, 
+    mainColor,
     setMainColor, 
     palette, 
     user, 
-    bgColor,
     setBgColor,
+    buttonColor,
+    setButtonColor,
     setPalettes, 
     colors, 
     setColors}) {
 
 const [colorSelector, setColorSelector] = useState(false);
 const [itemColor, setItemColor] = useState('');
+
 const paletteColors = palette.colors.map((c, idx) => <ColorsCard color={c} 
 key={idx} 
 colors={colors}
@@ -49,6 +51,14 @@ function handleBgCheck() {
     }
 }
 
+function handleButtonCheck() {
+    if (selected) {
+        setButtonColor(colors);
+    } else {
+        setSelected(true);
+    }
+}
+
 function handleCardChange() {
     if (colorSelector === true && itemColor !== colors) {
       setColors('')
@@ -71,13 +81,12 @@ async function handleHideColor(evt) {
     return (
         <>
         <div className="palette-container" onClick={handleCardChange} style={{backgroundColor: itemColor}} >
-            
             <div>
                 <h1 className={colorSelector ? "selected": "palette-name"}onClick={handleShowColor} >{palette.name}</h1>
                 { user._id === palette.user ? 
                 <div >
                     <form onSubmit={handleDelete} className="delete-form">
-                        <button className="delete-button">DELETE PALETTE</button>
+                        <button style={{backgroundColor: buttonColor, color: mainColor}} className="delete-button">DELETE PALETTE</button>
                     </form>
                     <h3>Created by: {palette.user}</h3>
                 </div>
@@ -97,8 +106,12 @@ async function handleHideColor(evt) {
                         <input  type="checkbox" onClick={handleBgCheck}/> 
                         <span className="checkboxes"></span>
                     </label>
+                    <label> Set Buttons
+                        <input  type="checkbox" onClick={handleButtonCheck}/> 
+                        <span className="checkboxes"></span>
+                    </label>
                 </div>
-                <button onClick={handleHideColor}>HIDE</button>
+                <button  style={{backgroundColor: buttonColor, color: mainColor}} onClick={handleHideColor}>HIDE</button>
             </div>
            :
            <p>Select palette to view</p> 

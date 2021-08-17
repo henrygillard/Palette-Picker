@@ -5,6 +5,7 @@ import * as colorsAPI from "../../utilities/colors-api"
 import NewPaletteForm from "../NewPaletteForm/NewPaletteForm";
 import ColorsIndex from "../ColorsIndex/ColorsIndex";
 import "./PaletteIndex.css"
+import {Link} from "react-router-dom"
 
 export default function PaletteIndex({user, 
   palettes, 
@@ -15,6 +16,8 @@ export default function PaletteIndex({user,
   setMainColor,
   bgColor,
   setBgColor,
+  buttonColor,
+  setButtonColor,
   selected,
   setSelected,}) 
 {
@@ -32,28 +35,31 @@ export default function PaletteIndex({user,
 
   return (
     <>
-    <h1 className="title" >Palettes List</h1>
-    <div className="index-container">
-    {palettes.map((p, idx) => 
-    <PaletteCard 
-    className="palette-container"
-    bgColor={bgColor}
-    setBgColor={setBgColor}
-    mainColor={mainColor}
-    setMainColor={setMainColor}
-    colors={colors}
-    setColors={setColors}
-    palettes={palettes}
-    palette={p} 
-    key={idx} 
-    user={user} 
-    setPalettes={setPalettes}
-    selected={selected}
-    setSelected={setSelected}
-    
-    />)}
-    
-    </div>
+      <div className="header">
+        <Link to="/palettes"><h1>Palettes |</h1></Link>
+        <Link to="/colors"><h1>| Color List</h1></Link>
+      </div>
+      <div className="index-container">
+        {palettes.map((p, idx) => 
+        <PaletteCard 
+        className="palette-container"
+        buttonColor={buttonColor}
+        setButtonColor={setButtonColor}
+        bgColor={bgColor}
+        setBgColor={setBgColor}
+        mainColor={mainColor}
+        setMainColor={setMainColor}
+        colors={colors}
+        setColors={setColors}
+        palettes={palettes}
+        palette={p} 
+        key={idx} 
+        user={user} 
+        setPalettes={setPalettes}
+        selected={selected}
+        setSelected={setSelected}
+        />)}
+      </div>
     </>
   )
 }
