@@ -6,6 +6,8 @@ import { useState } from "react"
 
 export default function PaletteCard({selected, 
     setSelected, 
+    cardColor,
+    setCardColor,
     mainColor,
     setMainColor, 
     palette, 
@@ -52,6 +54,14 @@ function handleBgCheck() {
     }
 }
 
+function handleCardCheck() {
+    if (selected) {
+        setCardColor(colors);
+    } else {
+        setSelected(true);
+    }
+}
+
 function handleButtonCheck() {
     if (selected) {
         setButtonColor(colors);
@@ -85,7 +95,7 @@ function handleRefresh() {
 
     return (
         <>
-        <div className="palette-container" onClick={handleCardChange} style={{backgroundColor: itemColor}} >
+        <div className="palette-container" style={{backgroundColor: cardColor}} >
             <div>
                 <h1 className={colorSelector ? "selected": "palette-name"}onClick={handleShowColor} >{palette.name}</h1>
                 { user._id === palette.user._id ? 
@@ -101,18 +111,23 @@ function handleRefresh() {
             </div>
             { colorSelector ?
             <div>
+                <p><span>Select a color, then set it's canvas!</span></p>
                 <h1>{paletteColors}</h1>
                 <div className="input-container">
-                    <label> Set All Text
-                        <input type="checkbox" onClick={handleTextCheck}/> 
+                    <label> 
+                        <button onClick={handleTextCheck} style={{backgroundColor: buttonColor, color: mainColor}}>Set All Text</button> 
                         <span className="checkboxes"></span>
                     </label>
-                    <label> Set Background
-                        <input  type="checkbox" onClick={handleBgCheck}/> 
+                    <label> 
+                        <button onClick={handleBgCheck} style={{backgroundColor: buttonColor, color: mainColor}}>Set Background</button> 
                         <span className="checkboxes"></span>
                     </label>
-                    <label> Set Buttons
-                        <input  type="checkbox" onClick={handleButtonCheck}/> 
+                    <label> 
+                        <button onClick={handleButtonCheck} style={{backgroundColor: buttonColor, color: mainColor}}>Set Buttons</button> 
+                        <span className="checkboxes"></span>
+                    </label>
+                    <label> 
+                        <button onClick={handleCardCheck} style={{backgroundColor: buttonColor, color: mainColor}}>Set Cards</button> 
                         <span className="checkboxes"></span>
                     </label>
                 </div>

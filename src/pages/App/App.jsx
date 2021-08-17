@@ -19,6 +19,7 @@ export default function App() {
   const [mainColor, setMainColor] = useState('')
   const [bgColor, setBgColor] = useState('');
   const [buttonColor, setButtonColor] = useState('');
+  const [cardColor, setCardColor] = useState('');
 
   
 
@@ -50,6 +51,8 @@ export default function App() {
               setPalettes={setPalettes}
               colors={colors}
               setColors={setColors}
+              cardColor={cardColor}
+              setCardColor={setCardColor}
               buttonColor={buttonColor}
               setButtonColor={setButtonColor}
               bgColor={bgColor}

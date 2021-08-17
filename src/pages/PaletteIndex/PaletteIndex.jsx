@@ -13,6 +13,8 @@ export default function PaletteIndex({user,
   setMainColor,
   bgColor,
   setBgColor,
+  cardColor,
+  setCardColor,
   buttonColor,
   setButtonColor,
   selected,
@@ -42,6 +44,8 @@ export default function PaletteIndex({user,
         {palettes.map((p, idx) => 
         <PaletteCard 
         className="palette-container"
+        cardColor={cardColor}
+        setCardColor={setCardColor}
         buttonColor={buttonColor}
         setButtonColor={setButtonColor}
         bgColor={bgColor}
