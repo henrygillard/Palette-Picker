@@ -38,6 +38,10 @@ Don't like any of these colors/palettes? Fine! Make your own!
 # CHECK OUT THE APP HERE:
 [LINK TO APP](https://pretty-palette-picker.herokuapp.com/)
 
+
+## LINK TO TRELLO BOARD:
+[TRELLO](https://trello.com/b/bZyBVApC/project-4-planning)
+
 ## Next Steps:
 * Allow the user to select individual colors from the Colors list component.
 * Allow the user to store saved palettes.
