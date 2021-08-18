@@ -3,7 +3,7 @@ const Schema = require('mongoose').Schema;
 
 const colorSchema = new Schema({
   name: { type: String, required: true },
-  code: [String],
+  code: { type: String, required: true },
 }, {
   timestamps: true
 });

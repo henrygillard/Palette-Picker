@@ -34,6 +34,10 @@ const User = require('./models/user');
         {name: 'Lagoon', code: '#5EA8A7'},
         {name: 'Whitewash', code: '#FFFFFF'},
         {name: 'Raspberry', code: '#FF4447'},
+        {name: 'Blue-gray', code: '#8593AE'},
+        {name: 'Steel', code: '#5A4E4D'},
+        {name: 'Pewter', code: '#7E675E'},
+        {name: 'Blush', code: '#DDA288'},
     ]);
     
     await Palette.deleteMany ({});
@@ -66,6 +70,11 @@ const User = require('./models/user');
         {
             name: 'Maritime',
             colors: [colors[19].code, colors[20].code, colors[21].code, colors[22].code ],
+            user: users[0]
+        },
+        {
+            name: 'City',
+            colors: [colors[23].code, colors[24].code, colors[25].code, colors[26].code ],
             user: users[0]
         },
     ]);
