@@ -61,7 +61,7 @@ export default function App() {
               setMainColor={setMainColor}/>
             </Route>
             <Route exact path="/palettes/new">
-              <NewPaletteForm />
+              <NewPaletteForm cardColor={cardColor}/>
             </Route>
             <Route exact path="/colors">
               <ColorsIndex user={user} colorsList={colorsList} setColorsList={setColorsList}/>

@@ -38,6 +38,18 @@ const User = require('./models/user');
         {name: 'Steel', code: '#5A4E4D'},
         {name: 'Pewter', code: '#7E675E'},
         {name: 'Blush', code: '#DDA288'},
+        {name: 'Egg Blue', code: '#A4CABC'},
+        {name: 'Nectar', code: '#EAB364'},
+        {name: 'Tuscan Red', code: '#B2473E'},
+        {name: 'Olive', code: '#ACBD78'},
+        {name: 'Sunshine', code: '#F9BA32'},
+        {name: 'Steel Blue', code: '#426E86'},
+        {name: 'Bone', code: '#F8F1E5'},
+        {name: 'Coal', code: '#2F3131'},
+        {name: 'Red Onion', code: '#662225'},
+        {name: 'Spicy', code: '#B51D0A'},
+        {name: 'Parsnip', code: '#EAD39C'},
+        {name: 'PepperCorn', code: '#7D5E3C'},
     ]);
     
     await Palette.deleteMany ({});
@@ -75,6 +87,21 @@ const User = require('./models/user');
         {
             name: 'City',
             colors: [colors[23].code, colors[24].code, colors[25].code, colors[26].code ],
+            user: users[0]
+        },
+        {
+            name: 'Antique',
+            colors: [colors[27].code, colors[28].code, colors[29].code, colors[30].code ],
+            user: users[0]
+        },
+        {
+            name: 'Modern',
+            colors: [colors[31].code, colors[32].code, colors[33].code, colors[34].code ],
+            user: users[0]
+        },
+        {
+            name: 'Comforting',
+            colors: [colors[35].code, colors[36].code, colors[37].code, colors[38].code ],
             user: users[0]
         },
     ]);

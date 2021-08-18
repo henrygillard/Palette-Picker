@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom";
 import "./NewPaletteForm.css"
 import * as paletteAPI from "../../utilities/palettes-api"
 
-export default function NewPaletteForm() {
+export default function NewPaletteForm({cardColor}) {
 
     const [paletteData, setPaletteData] = useState({
         name: '',
@@ -31,7 +31,7 @@ export default function NewPaletteForm() {
     return (
       <>
         <h1>Enter New Palette</h1>
-        <div className="new-palette-form">
+        <div className="new-palette-form" style={{backgroundColor: cardColor}}>
           <form onSubmit={handleSubmit} >
             <div className="name-input">
               Palette Name:
