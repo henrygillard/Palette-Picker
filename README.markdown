@@ -35,10 +35,10 @@ Don't like any of these colors/palettes? Fine! Make your own!
 
 ![](https://i.imgur.com/Ew1mfBF.png)
 
-#CHECK OUT THE APP HERE:
+# CHECK OUT THE APP HERE:
 [LINK TO APP](https://pretty-palette-picker.herokuapp.com/)
 
-##Next Steps:
+## Next Steps:
 * Allow the user to select individual colors from the Colors list component.
 * Allow the user to store saved palettes.
 * Allow the user to input color names/codes as inputs, without using the color slect wheel.
